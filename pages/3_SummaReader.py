@@ -58,6 +58,7 @@ st.markdown('''
     background: rgba(0, 0, 0, 0);
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 32px;
     border-radius: 2rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0);
     z-index: 1000;
@@ -173,4 +174,5 @@ with footer_container:
             """,
             unsafe_allow_html=True
         )
+
 
