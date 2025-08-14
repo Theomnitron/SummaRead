@@ -392,7 +392,7 @@ def render_sidebar_profile():
         /* Specific styling for summary components - keep Open-Dyslexic and ensure text color */
         .heading-summary {
             font-family: 'Open-Dyslexic', sans-serif !important;
-            font-size: 31px !important;
+            font-size: 25px !important;
             font-weight: 700;
             text-align: center;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
