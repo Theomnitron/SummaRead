@@ -28,17 +28,17 @@ st.markdown('''
 /* Specific styling for summary components */
 .heading-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 25px !important;
+    font-size: 28px !important;
     font-weight: 700;
     text-align: center;
+    text-transform: capitalize;
 
 }
 .body-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 2rem;
     letter-spacing: 0.5px;
-    font-weight: bold;
 }
 .points{
     font-family: 'Open-Dyslexic', sans-serif !important;
@@ -46,11 +46,10 @@ st.markdown('''
 }
 .outline-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     padding-left: 25px;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
-    font-weight: bold;
 }
 
 /* Footer styling */
@@ -62,7 +61,7 @@ st.markdown('''
     background: rgba(0, 0, 0, 0);
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     border-radius: 2rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0);
     z-index: 1000;
@@ -178,6 +177,7 @@ with footer_container:
             """,
             unsafe_allow_html=True
         )
+
 
 
 
