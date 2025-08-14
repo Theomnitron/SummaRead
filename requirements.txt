@@ -1,0 +1,15 @@
+streamlit
+firebase-admin
+google-cloud-firestore
+google-oauth2-tool
+requests
+beautifulsoup4
+PyPDF2
+easyocr
+opencv-python
+PyMuPDF
+Pillow
+transformers
+torch
+gtts
+numpy
