@@ -5,7 +5,6 @@ primaryColor = "#2196F3"  # A vibrant blue
 backgroundColor = "#1A1A1A" # Very dark background
 secondaryBackgroundColor = "#2A2A2A" # Slightly lighter dark for components
 textColor = "#FAFAFA" # Off-white text
-[theme]
 font = "OpenDyslexic"  # Or the name you choose
 
 [[theme.fontFaces]]
