@@ -28,7 +28,7 @@ st.markdown('''
 /* Specific styling for summary components */
 .heading-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 31px !important;
+    font-size: 25px !important;
     font-weight: 700;
     text-align: center;
 
@@ -145,7 +145,7 @@ with main_container:
                 st.warning("No text available to convert to speech.")
     else:
         # If no summary exists, tell the user to generate one (PRESERVED - NO CHANGES)
-        st.write("<h3 style='text-align:center; font-size: 45px; font-weight: bold;'>🔊SummaRead!</h3>", unsafe_allow_html=True)
+        st.write("<h3 style='text-align:center; font-size: 38px; font-weight: bold;'>🔊SummaRead!</h3>", unsafe_allow_html=True)
         st.info("Please go to the 'Text Extraction' page to generate a summary first.")
         if st.button('Go to Text Extraction', icon="📝", use_container_width= True):
             st.switch_page("pages/2_Extract.py")
@@ -173,3 +173,4 @@ with footer_container:
             """,
             unsafe_allow_html=True
         )
+
