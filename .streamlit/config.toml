@@ -5,5 +5,11 @@ primaryColor = "#2196F3"  # A vibrant blue
 backgroundColor = "#1A1A1A" # Very dark background
 secondaryBackgroundColor = "#2A2A2A" # Slightly lighter dark for components
 textColor = "#FAFAFA" # Off-white text
-font = "Open-Dyslexic" # Or "serif", "monospace"
-url= "https://fonts.googleapis.com/css2?family=Open+Dyslexic:wght@400;700&display=swap"
+[theme]
+font = "OpenDyslexic"  # Or the name you choose
+
+[[theme.fontFaces]]
+family = "OpenDyslexic"
+url = "static/OpenDyslexic-Regular.ttf"  # Or the URL
+weight = 400
+style = "normal"
