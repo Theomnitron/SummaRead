@@ -37,6 +37,8 @@ st.markdown('''
     font-family: 'Open-Dyslexic', sans-serif !important;
     font-size: 14px !important;
     line-height: 2rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
 }
 .points{
     font-family: 'Open-Dyslexic', sans-serif !important;
@@ -47,6 +49,8 @@ st.markdown('''
     font-size: 14px !important;
     padding-left: 25px;
     line-height: 1.5rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
 }
 
 /* Footer styling */
@@ -174,6 +178,7 @@ with footer_container:
             """,
             unsafe_allow_html=True
         )
+
 
 
 
