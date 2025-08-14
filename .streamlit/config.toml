@@ -1,0 +1,8 @@
+# .streamlit/config.toml
+[theme]
+base = "dark"
+primaryColor = "#2196F3"  # A vibrant blue
+backgroundColor = "#1A1A1A" # Very dark background
+secondaryBackgroundColor = "#2A2A2A" # Slightly lighter dark for components
+textColor = "#FAFAFA" # Off-white text
+font = "sans serif" # Or "serif", "monospace"
