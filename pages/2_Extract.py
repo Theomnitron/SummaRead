@@ -451,7 +451,7 @@ def extract_image_pdf_text(pdf_file):
 def main():
     
     st.write("<h3 style='text-align:center; font-size: 38px; font-weight: bold;'>📝Text Extraction</h3>", unsafe_allow_html=True)
-    st.write("<p style='text-align: center'>Extract text from a website or, PDF, or paste it directly below</p>", unsafe_allow_html=True)
+    st.write("<p style='text-align: center'>Extract text from a website, PDF; or paste text directly</p>", unsafe_allow_html=True)
     st.write('---')
 
     # Initialize session state variables (preserved - NO CHANGES)
@@ -534,6 +534,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
