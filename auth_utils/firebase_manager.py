@@ -402,6 +402,8 @@ def render_sidebar_profile():
             font-size: 14px !important;
             line-height: 2rem;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
+            letter-spacing: 0.5px;
+            font-weight: bold;
         }
         .points{
             font-family: 'Open-Dyslexic', sans-serif !important;
@@ -414,6 +416,8 @@ def render_sidebar_profile():
             padding-left: 25px;
             line-height: 1.5rem;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
+            letter-spacing: 0.5px;
+            font-weight: bold;
         }
 
         /* General Streamlit Status Messages (st.success, st.info, st.error) */
