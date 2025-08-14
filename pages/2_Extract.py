@@ -516,7 +516,7 @@ def main():
             if length < 400:
                 st.toast(f'{length}/400 words; Writing too short!')
             else:
-                with st.spinner("Generating Summary! Be done a moment:)..."):
+                with st.spinner("Generating Summary! Be done in a moment:)..."):
                     # MODIFIED: Load the tokenizer here, within the spinner
                     global bart_tokenizer # Declare global to modify the variable
                     if 'bart_tokenizer_instance' not in st.session_state:
@@ -534,5 +534,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
