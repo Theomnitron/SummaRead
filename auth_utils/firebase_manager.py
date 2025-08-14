@@ -392,18 +392,18 @@ def render_sidebar_profile():
         /* Specific styling for summary components - keep Open-Dyslexic and ensure text color */
         .heading-summary {
             font-family: 'Open-Dyslexic', sans-serif !important;
-            font-size: 25px !important;
+            font-size: 28px !important;
             font-weight: 700;
             text-align: center;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
+            text-transform: capitalize;
         }
         .body-summary {
             font-family: 'Open-Dyslexic', sans-serif !important;
-            font-size: 14px !important;
+            font-size: 16px !important;
             line-height: 2rem;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
             letter-spacing: 0.5px;
-            font-weight: bold;
         }
         .points{
             font-family: 'Open-Dyslexic', sans-serif !important;
@@ -412,12 +412,11 @@ def render_sidebar_profile():
         }
         .outline-summary {
             font-family: 'Open-Dyslexic', sans-serif !important;
-            font-size: 14px !important;
+            font-size: 16px !important;
             padding-left: 25px;
             line-height: 1.5rem;
             color: #FAFAFA; /* Explicitly set to ensure consistency */
             letter-spacing: 0.5px;
-            font-weight: bold;
         }
 
         /* General Streamlit Status Messages (st.success, st.info, st.error) */
@@ -450,7 +449,7 @@ def render_sidebar_profile():
             background: rgba(0, 0, 0, 0); /* Still transparent or very subtle */
             padding-left: 15px;
             padding-right: 15px;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             border-radius: 2rem;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0);
             z-index: 1000;
