@@ -31,7 +31,7 @@ visibility: hidden;
 
 
 
-st.write("<h3 style='text-align:center; font-size: 45px; font-weight: bold;'>⚖️Text Comparison</h3>", unsafe_allow_html=True)
+st.write("<h3 style='text-align:center; font-size: 38px; font-weight: bold;'>⚖️Comparison</h3>", unsafe_allow_html=True)
 
 st.write('---')
 
@@ -60,5 +60,6 @@ with col2:
     st.text_area(label= 'Summary',
                 value= display_summary_text,
                 height= 500)
+
 
 
