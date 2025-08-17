@@ -16,7 +16,9 @@ st.write("""
          She died in England in 1617, at the young age of 20 or 21. 
          """)
 
-with st.container():
+st.write('---')
+
+with st.container(border= True):
     st.write("""
         Pocahontas, born around 1596, was a Native American woman from the Powhatan tribe in Virginia.
          She is famously known for her interactions with the English colonists at Jamestown.
