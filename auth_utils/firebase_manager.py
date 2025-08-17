@@ -470,7 +470,7 @@ def render_sidebar_profile():
                 st.rerun()
         else:
             st.info("Please log in to access all features")
-            if st.button("Go to Login/Register"):
+            if st.button("Login/Register"):
                 st.session_state.page = "Login"
                 # switch to your auth page (adjust if your page path/name differs)
                 st.switch_page("pages/1_Profile.py")
