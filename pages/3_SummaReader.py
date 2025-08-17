@@ -36,9 +36,10 @@ st.markdown('''
 }
 .body-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 16px !important;
+    font-size: 15px !important;
     line-height: 2rem;
     letter-spacing: 0.5px;
+    padding: 0px 5px;
 }
 .points{
     font-family: 'Open-Dyslexic', sans-serif !important;
@@ -46,9 +47,9 @@ st.markdown('''
 }
 .outline-summary {
     font-family: 'Open-Dyslexic', sans-serif !important;
-    font-size: 16px !important;
-    padding-left: 25px;
-    line-height: 1.5rem;
+    font-size: 15px !important;
+    padding-left: 10px;
+    line-height: 2rem;
     letter-spacing: 0.5px;
 }
 
