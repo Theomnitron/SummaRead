@@ -239,19 +239,20 @@
 #     </button>
 #     """
 # components.html(show_print_button)
-
-
-import pdfkit, os
 import streamlit as st
+from fpdf import FPDF
 
-report_html = "fyj yvj ygyv yvkyu"
+st.header('PDF generator - test')
+button1 = st.button('PDF')
 
-file_name = 'report.pdf'
-pdfkit.from_string(report_html, file_name)
-with open(file_name, "rb") as pdf_file:
-    st.download_button(
-        'Download PDF',
-        data = pdf_file,
-        file_name = file_name,
-        mime = 'application/octet-stream')
-    os.remove(file_name)
+if button1:
+    name = st.text_input('Name', value='')
+    pdf = FPDF('P', 'mm', 'A4')
+    pdf.add_page()
+    pdf.set_font(family='Times', size=16)
+    pdf.cell(40, 50, txt=name)
+
+    st.download_button('Download PDF',
+                       data=pdf,
+                       file_name='pdf_test.pdf'
+                       )
