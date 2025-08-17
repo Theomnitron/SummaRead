@@ -12,7 +12,7 @@ st.markdown("""
             .outline-summary{
                 font-family: 'Opendyslexic', sans-serif !important;
                 font-size: 15px !important;
-                padding-left: 20px;
+                padding-left: 15px;
                 line-height: 2rem;
                 letter-spacing: 0.5px;
             }
