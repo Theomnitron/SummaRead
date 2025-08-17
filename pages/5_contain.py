@@ -216,28 +216,42 @@
 #     )
 
 
+# import streamlit as st
+# import streamlit.components.v1 as components
+
+# # Streamlit output goes here
+# st.title("Sales report")
+# st.write('---')
+# st.subheader("Sales report")
+# st.write('---')
+# st.write("srggwvw wvbwev weviw eviwe vweivwe vweivw evwevwviwev vwv")
+# # st.bar_chart(data)
+
+# show_print_button ="""
+#     <script>
+#         function print_page(obj) {
+#             obj.style.display = "none";
+#             parent.window.print();
+#         }
+#     </script>
+#     <button onclick="print_page(this)">
+#         Print page (choose 'Save as PDF' in print dialogue)
+#     </button>
+#     """
+# components.html(show_print_button)
+
+
+import pdfkit, os
 import streamlit as st
-import streamlit.components.v1 as components
 
-# Streamlit output goes here
-st.title("Sales report")
-st.write('---')
-st.subheader("Sales report")
-st.write('---')
-st.write("srggwvw wvbwev weviw eviwe vweivwe vweivw evwevwviwev vwv")
-# st.bar_chart(data)
+report_html = "fyj yvj ygyv yvkyu"
 
-show_print_button ="""
-    <script>
-        function print_page(obj) {
-            obj.style.display = "none";
-            parent.window.print();
-        }
-    </script>
-    <button onclick="print_page(this)">
-        Print page (choose 'Save as PDF' in print dialogue)
-    </button>
-    """
-components.html(show_print_button)
-
-
+file_name = 'report.pdf'
+pdfkit.from_string(report_html, file_name)
+with open(file_name, "rb") as pdf_file:
+    st.download_button(
+        'Download PDF',
+        data = pdf_file,
+        file_name = file_name,
+        mime = 'application/octet-stream')
+    os.remove(file_name)

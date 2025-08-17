@@ -16,3 +16,4 @@ numpy
 fpdf
 pdf2docx
 reportlab
+pdfkit
