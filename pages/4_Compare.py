@@ -54,11 +54,12 @@ with col2:
             f"Main Points:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Main Points', ['NA'])) + "\n\n"
             f"Key Discoveries:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Key Discoveries', ['N/A']))
         )
+        fulsumm = (summary_output['Heading'] + "\n\n" + summary_output['Body Summary'] + "\n\n" + "Important Notes" + "\n" + "\n".join(summary_output['Outline Summary']['Main Points']) + "\n\n" + "\n".join(summary_output['Outline Summary']['Key Discoveries']))
     else:
         display_summary_text = "No summary available. Please generate a summary first."
 
     st.text_area(label= 'Summary',
-                value= display_summary_text,
+                value= fulsumm,
                 height= 500)
 
 
