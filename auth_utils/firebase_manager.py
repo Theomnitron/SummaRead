@@ -271,7 +271,7 @@ def render_sidebar_profile():
             background-color: #222222; /* Different shade of dark for sidebar */
             border-radius: 0 15px 15px 0; /* Rounded right corners */
             box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-            width: 200px !important;
+            width: 215px !important;
         }
 
         /* Buttons */
