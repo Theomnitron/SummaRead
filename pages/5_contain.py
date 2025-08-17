@@ -215,41 +215,29 @@
 #         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 #     )
 
+
 import streamlit as st
-from fpdf import FPDF
-import base64
-from io import BytesIO
+import streamlit.components.v1 as components
 
-# Function to create a PDF from text
-def create_pdf(text_content):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    pdf.multi_cell(0, 10, text_content)
-    
-    # Save the PDF to a BytesIO object
-    pdf_output = BytesIO()
-    pdf.output(pdf_output)
-    pdf_output.seek(0)
-    return pdf_output
+# Streamlit output goes here
+st.title("Sales report")
+st.write('---')
+st.subheader("Sales report")
+st.write('---')
+st.write("srggwvw wvbwev weviw eviwe vweivwe vweivw evwevwviwev vwv")
+# st.bar_chart(data)
 
-st.title("Text to PDF Converter")
-
-# Text area for user input
-user_text = st.text_area("Enter your text here:", height=200)
-
-if st.button("Generate PDF"):
-    if user_text:
-        pdf_buffer = create_pdf(user_text)
-        
-        # Create a download button for the generated PDF
-        st.download_button(
-            label="Download PDF",
-            data=pdf_buffer,
-            file_name="output.pdf",
-            mime="application/pdf"
-        )
-    else:
-        st.warning("Please enter some text to generate a PDF.")
+show_print_button ="""
+    <script>
+        function print_page(obj) {
+            obj.style.display = "none";
+            parent.window.print();
+        }
+    </script>
+    <button onclick="print_page(this)">
+        Print page (choose 'Save as PDF' in print dialogue)
+    </button>
+    """
+components.html(show_print_button)
 
 
