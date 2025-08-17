@@ -271,6 +271,8 @@ def render_sidebar_profile():
             background-color: #222222; /* Different shade of dark for sidebar */
             border-radius: 0 15px 15px 0; /* Rounded right corners */
             box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            min-width: 400px;
+            max-width: 400px;
         }
 
         /* Buttons */
@@ -470,7 +472,7 @@ def render_sidebar_profile():
                 st.rerun()
         else:
             st.info("Please log in to access all features")
-            if st.button("  Login/Register  "):
+            if st.button("Login/Register"):
                 st.session_state.page = "Login"
                 # switch to your auth page (adjust if your page path/name differs)
                 st.switch_page("pages/1_Profile.py")
