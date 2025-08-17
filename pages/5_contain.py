@@ -180,7 +180,43 @@
 #         )
 
 import streamlit as st
-st.write('Hello sjv')
+
+message = st.text_area("Message", value="Lorem ipsum txt")
+
+if st.button("Prepare download"):
+    st.download_button(
+        label="Download text",
+        data=message,
+        file_name="message.txt",
+        on_click="ignore",
+        type="primary",
+        icon=":material/download:",
+    )
+# Docx
+d_message = st.text_area("Message", value="Lorem ipsum docx")
+
+if st.button("Prepare docx"):
+    st.download_button(
+        label="Download text",
+        data=d_message,
+        file_name="message.docx",
+        on_click="ignore",
+        type="primary",
+        icon=":material/download:",
+    )
+
+# PDF
+p_message = st.text_area("Message", value="Lorem ipsum pdf")
+
+if st.button("Prepare pdf"):
+    st.download_button(
+        label="Download text",
+        data=p_message,
+        file_name="message.pdf",
+        on_click="ignore",
+        type="primary",
+        icon=":material/download:",
+    )
 
 
 
