@@ -187,7 +187,7 @@ if st.button("Prepare download"):
     st.download_button(
         label="Download text",
         data=message,
-        file_name="message.txt",
+        file_name="message.pdf]",
         on_click="ignore",
         type="primary",
         icon=":material/download:",
