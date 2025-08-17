@@ -181,14 +181,13 @@
 
 import streamlit as st
 
-# PDF
-p_message = st.text_area("Message", value="Lorem ipsum pdf")
+message = st.text_area("Message", value="Lorem ipsum.\nStreamlit is cool.")
 
-if st.button("Prepare pdf"):
+if st.button("Prepare download"):
     st.download_button(
         label="Download text",
-        data=p_message,
-        file_name="message.pdf",
+        data=message,
+        file_name="message.txt",
         on_click="ignore",
         type="primary",
         icon=":material/download:",
