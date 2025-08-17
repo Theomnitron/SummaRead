@@ -4,10 +4,17 @@ st.markdown("""
             <style>
                 .adj{
                     font-family: 'Open-Dyslexic', sans-serif !important;
-                    font-size: 15px !important;
+                    font-size: 14px !important;
                     line-height: 2rem;
                     letter-spacing: 0.5px;
                 }
+            .outline-summary{
+                font-family: 'Open-dyslexic', sans-serif !important;
+                font-size: 16px !important;
+                padding-left: 25px;
+                line-height: 1.5rem;
+                letter-spacing: 0.5px;
+            }
             </style>
             """, unsafe_allow_html= True)
 
