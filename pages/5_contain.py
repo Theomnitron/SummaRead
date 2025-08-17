@@ -1,12 +1,14 @@
 import streamlit as st
 
 st.markdown("""
-            .adj{
-                font-family: 'Open-Dyslexic', sans-serif !important;
-                font-size: 16px !important;
-                line-height: 2rem;
-                letter-spacing: 0.5px;
-            }
+            <style>
+                .adj{
+                    font-family: 'Open-Dyslexic', sans-serif !important;
+                    font-size: 16px !important;
+                    line-height: 2rem;
+                    letter-spacing: 0.5px;
+                }
+            </style>
             """, unsafe_allow_html= True)
 
 st.title("Hello There!")
