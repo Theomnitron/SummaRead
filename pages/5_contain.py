@@ -193,28 +193,63 @@
 #         icon=":material/download:",
 #     )
 
+# import streamlit as st
+# from pdf2docx import Converter
+# import io
+
+# st.write("hello world")
+
+# uploaded_file = st.text_area('valuhi', value= "Hey there")
+# if uploaded_file is not None:
+#     # To read file as bytes:
+#     bytes_data = uploaded_file.getvalue()
+#     cv = Converter(stream=bytes_data)
+#     out_stream = io.BytesIO()
+#     cv.convert(out_stream)
+#     cv.close()
+#     # Download the file
+#     btn = st.download_button(
+#         label="Download image",
+#         data=out_stream.getvalue(),
+#         file_name="sample.docx",
+#         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+#     )
+
 import streamlit as st
-from pdf2docx import Converter
-import io
+from fpdf import FPDF
+import base64
+from io import BytesIO
 
-st.write("hello world")
+# Function to create a PDF from text
+def create_pdf(text_content):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    pdf.multi_cell(0, 10, text_content)
+    
+    # Save the PDF to a BytesIO object
+    pdf_output = BytesIO()
+    pdf.output(pdf_output)
+    pdf_output.seek(0)
+    return pdf_output
 
-uploaded_file = st.text_area('valuhi', value= "Hey there")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    cv = Converter(stream=bytes_data)
-    out_stream = io.BytesIO()
-    cv.convert(out_stream)
-    cv.close()
-    # Download the file
-    btn = st.download_button(
-        label="Download image",
-        data=out_stream.getvalue(),
-        file_name="sample.docx",
-        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    )
+st.title("Text to PDF Converter")
 
+# Text area for user input
+user_text = st.text_area("Enter your text here:", height=200)
 
+if st.button("Generate PDF"):
+    if user_text:
+        pdf_buffer = create_pdf(user_text)
+        
+        # Create a download button for the generated PDF
+        st.download_button(
+            label="Download PDF",
+            data=pdf_buffer,
+            file_name="output.pdf",
+            mime="application/pdf"
+        )
+    else:
+        st.warning("Please enter some text to generate a PDF.")
 
 
