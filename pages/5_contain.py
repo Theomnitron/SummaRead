@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.markdown("""
-            . adj{
+            .adj{
                 font-family: 'Open-Dyslexic', sans-serif !important;
                 font-size: 16px !important;
                 line-height: 2rem;
