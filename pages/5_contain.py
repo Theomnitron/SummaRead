@@ -239,20 +239,27 @@
 #     </button>
 #     """
 # components.html(show_print_button)
+
+
 import streamlit as st
 from fpdf import FPDF
+import base64
 
-st.header('PDF generator - test')
-button1 = st.button('PDF')
+report_text = st.text_input("Report Text")
 
-if button1:
-    name = st.text_input('Name', value='')
-    pdf = FPDF('P', 'mm', 'A4')
+
+export_as_pdf = st.button("Export Report")
+
+def create_download_link(val, filename):
+    b64 = base64.b64encode(val)  # val looks like b'...'
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
+
+if export_as_pdf:
+    pdf = FPDF()
     pdf.add_page()
-    pdf.set_font(family='Times', size=16)
-    pdf.cell(40, 50, txt=name)
+    pdf.set_font('Arial', 'B', 16)
+    pdf.cell(40, 10, report_text)
+    
+    html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
 
-    st.download_button('Download PDF',
-                       data=pdf,
-                       file_name='pdf_test.pdf'
-                       )
+    st.markdown(html, unsafe_allow_html=True)
