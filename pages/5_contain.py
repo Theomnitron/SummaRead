@@ -4,7 +4,7 @@ st.markdown("""
             <style>
                 .adj{
                     font-family: 'Open-Dyslexic', sans-serif !important;
-                    font-size: 16px !important;
+                    font-size: 15px !important;
                     line-height: 2rem;
                     letter-spacing: 0.5px;
                 }
