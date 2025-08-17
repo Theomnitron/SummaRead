@@ -199,7 +199,7 @@ import io
 
 st.write("hello world")
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.text_area('valuhi', value= "Hey there")
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
