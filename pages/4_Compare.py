@@ -47,19 +47,20 @@ with col2:
     # Check if summary_output exists and is not None before trying to access its parts
     summary_output = st.session_state.get('summary_output', None)
     if summary_output:
-            # Construct the summary string to display in the text area
-        display_summary_text = (
-            f"Heading: {summary_output.get('Heading', 'N/A')}\n\n"
-            f"Body Summary:\n{summary_output.get('Body Summary', 'N/A')}\n\n"
-            f"Main Points:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Main Points', ['NA'])) + "\n\n"
-            f"Key Discoveries:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Key Discoveries', ['N/A']))
-        )
-        fulsumm = (summary_output['Heading'] + "\n\n" + summary_output['Body Summary'] + "\n\n" + "Important Notes" + "\n" + "\n".join(summary_output['Outline Summary']['Main Points']) + "\n\n" + "\n".join(summary_output['Outline Summary']['Key Discoveries']))
+    #         # Construct the summary string to display in the text area
+    #     display_summary_text = (
+    #         f"Heading: {summary_output.get('Heading', 'N/A')}\n\n"
+    #         f"Body Summary:\n{summary_output.get('Body Summary', 'N/A')}\n\n"
+    #         f"Main Points:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Main Points', ['NA'])) + "\n\n"
+    #         f"Key Discoveries:\n" + "\n".join(summary_output.get('Outline Summary', {}).get('Key Discoveries', ['N/A']))
+    #     )
+        display_summary_text = (summary_output['Heading'] + "\n\n" + summary_output['Body Summary'] + "\n\n" + "Important Notes" + "\n" + "\n".join(summary_output['Outline Summary']['Main Points']) + "\n\n" + "\n".join(summary_output['Outline Summary']['Key Discoveries']))
+
     else:
         display_summary_text = "No summary available. Please generate a summary first."
 
     st.text_area(label= 'Summary',
-                value= fulsumm,
+                value= display_summary_text,
                 height= 500)
 
 
