@@ -179,18 +179,40 @@
 #             unsafe_allow_html=True
 #         )
 
+# import streamlit as st
+
+# message = st.text_area("Message", value="Lorem ipsum.\nStreamlit is cool.")
+
+# if st.button("Prepare download"):
+#     st.download_button(
+#         label="Download text",
+#         data=message,
+#         file_name="message.pdf",
+#         on_click="ignore",
+#         type="primary",
+#         icon=":material/download:",
+#     )
+
 import streamlit as st
+from pdf2docx import Converter
+import io
 
-message = st.text_area("Message", value="Lorem ipsum.\nStreamlit is cool.")
+st.write("hello world")
 
-if st.button("Prepare download"):
-    st.download_button(
-        label="Download text",
-        data=message,
-        file_name="message.pdf",
-        on_click="ignore",
-        type="primary",
-        icon=":material/download:",
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    cv = Converter(stream=bytes_data)
+    out_stream = io.BytesIO()
+    cv.convert(out_stream)
+    cv.close()
+    # Download the file
+    btn = st.download_button(
+        label="Download image",
+        data=out_stream.getvalue(),
+        file_name="sample.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
 
 
