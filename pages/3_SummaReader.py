@@ -9,8 +9,7 @@ from fpdf import FPDF # NEW: Import for PDF generation
 from auth_utils.firebase_manager import render_sidebar_profile
 
 st.set_page_config(layout="centered",
-                page_icon="🗣️",
-                page_title="Text to Speech")
+                page_title="SummaRead")
 
 # ONLY ADDED: Call the common sidebar profile renderer at the very beginning of the script
 render_sidebar_profile()
