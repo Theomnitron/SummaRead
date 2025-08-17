@@ -32,6 +32,7 @@ st.write("""
             While popular culture often depicts a romantic relationship with John Smith, historians debate the specifics of their interactions, suggesting a more complex dynamic involving diplomacy, cultural exchange, and potential conflict. 
          </p>
         """, unsafe_allow_html= True)
+st.write('---')
 st.markdown(f'''
                 <ul class='outline-summary'>
                     <li>She died in England in 1617, at the young age of 20 or 21.</li>
