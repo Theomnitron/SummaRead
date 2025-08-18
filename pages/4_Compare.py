@@ -64,7 +64,7 @@ with col2:
                 height= 500)
 
     # Download Full Summary
-    if st.button("Download FUll Summary", width= "stretch", icon= ":material/download:"):
+    if st.button("Download Summary", width= "stretch", icon= ":material/download:"):
         st.download_button(
             label= "Download Now",
             data= display_summary_text,
