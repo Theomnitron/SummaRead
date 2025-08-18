@@ -1,6 +1,6 @@
-# import streamlit as st
+import streamlit as st
 
-# head = st.markdown('<h2>Heading</h2>', unsafe_allow_html= True)
+head = st.markdown('<h2>Heading</h2>', icon= ':material/person:', unsafe_allow_html= True)
 # body = st.markdown("""
 #                     <p>
 #                         A short label explaining to the user what this button is for.
