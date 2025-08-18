@@ -492,7 +492,7 @@ def main():
 
 
     with tab_pdf:
-        pdf_file = st.file_uploader("Upload a PDF file:", type=["pdf", 'jpg', 'png'])
+        pdf_file = st.file_uploader("Upload a PDF file:", type=["pdf"])
         if pdf_file:
             # if st.button("Extract from PDF"): # Removed the button for PDF as it triggers automatically on upload now
             with st.spinner("Extracting text from PDF..."):
