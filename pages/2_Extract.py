@@ -450,7 +450,7 @@ def extract_image_pdf_text(pdf_file):
 # --- Main Page UI and Logic ---
 def main():
     
-    st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>Text Extraction</h3>", unsafe_allow_html=True)
+    st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>📝Text Extraction</h3>", unsafe_allow_html=True)
     st.write("<p style='text-align: center; font-size: 14px;'>Extract text from a website, PDF; or paste text directly</p>", unsafe_allow_html=True)
     st.write('---')
 
