@@ -145,7 +145,7 @@ with main_container:
             )
 
         # Button to generate speech - now directly uses full_summary_text_for_tts (PRESERVED - NO CHANGES)
-        if st.button("Generate Speech"):
+        if st.button("🗣️ Read Aloud!"):
             if full_summary_text_for_tts.strip():
                 try:
                     with st.spinner("Generating audio..."):
