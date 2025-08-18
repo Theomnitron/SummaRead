@@ -116,7 +116,7 @@ with main_container:
         # Use multiple newlines for clearer pauses in speech
         full_summary_text_for_tts = (
             summary['Heading'] + "\n\n" +
-            summary['Body Summary'] + "\n\n" + notes + "\n" + "\n".join(summary['Outline Summary']['Main Points']) + "\n\n" + "\n".join(summary['Outline Summary']['Key Discoveries'])
+            summary['Body Summary'] + "\n\n" + notes + "\n" + "\n".join(summary['Outline Summary']['Main Points']) + "\n" + "\n".join(summary['Outline Summary']['Key Discoveries'])
         )
         # Note: I've added "Main points include:" and "Key discoveries include:" for better speech flow.
         # If you strictly want NO labels, even for speech, remove these parts.
@@ -132,7 +132,18 @@ with main_container:
             options=list(accent_options.keys())
         )
         tld = accent_options[accent]
-            
+
+        # Download Full Summary
+        if st.button("Download FUll Summary", width= "stretch"):
+            st.download_button(
+                label= "Download Now",
+                data= full_summary_text_for_tts,
+                file_name= "SummaRead_Summary.docx",
+                on_click= "ignore",
+                type= "primary",
+                icon= ":material/download:",
+            )
+
         # Button to generate speech - now directly uses full_summary_text_for_tts (PRESERVED - NO CHANGES)
         if st.button("Generate Speech"):
             if full_summary_text_for_tts.strip():

@@ -37,7 +37,7 @@ if st.session_state.get("logged_in", False):
 
 else:
     with tab_register:
-        st.markdown('<h2 style="text-align: center; font-size: 25px; font-family: Inter; font-weight: bold;">Create an Account</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="text-align: center; font-size: 20px; font-family: Inter; font-weight: bold;">:material/person: Create an Account</h2>', unsafe_allow_html=True)
         with st.form("reg_form", clear_on_submit=False):
             col1, col2 = st.columns(2)
             first_name = col1.text_input("First Name", key="reg_fname")
@@ -71,7 +71,7 @@ else:
 
 
     with tab_login:
-        st.markdown('<h2 style="text-align: center; font-size: 25px; font-family: Inter; font-weight: bold;">Login to Your Account</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="text-align: center; font-size: 20px; font-family: Inter; font-weight: bold;">:material/account_circle: Login to Your Account</h2>', unsafe_allow_html=True)
         with st.form("login_form", clear_on_submit=False):
             email = st.text_input("Email Address", key="login_email")
             password = st.text_input("Password", type="password", key="login_pword")
