@@ -510,7 +510,7 @@ def main():
                 st.toast('Ready to generate summary')
 
     # --- Summarization Logic (MODIFIED for lazy tokenizer loading) ---
-    if st.button("Generate Your Summary", key="generate_summary_button"):
+    if st.button("⏳ Generate Your Summary", key="generate_summary_button", width= "stretch"):
         if st.session_state['extracted_text'] and st.session_state['extracted_text'].strip():
             length = len(st.session_state['extracted_text'].split())
             if length < 400:
