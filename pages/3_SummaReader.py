@@ -161,7 +161,7 @@ with main_container:
                 st.warning("No text available to convert to speech.")
     else:
         # If no summary exists, tell the user to generate one (PRESERVED - NO CHANGES)
-        st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>🔊SummaRead!</h3>", unsafe_allow_html=True)
+        st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>🔊 SummaRead!</h3>", unsafe_allow_html=True)
         st.info("Please go to the 'Text Extraction' page to generate a summary first.")
         if st.button('Go to Text Extraction', icon="📝", use_container_width= True):
             st.switch_page("pages/2_Extract.py")

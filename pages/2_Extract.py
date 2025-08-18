@@ -450,7 +450,7 @@ def extract_image_pdf_text(pdf_file):
 # --- Main Page UI and Logic ---
 def main():
     
-    st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>📝Text Extraction</h3>", unsafe_allow_html=True)
+    st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>📝 Text Extraction</h3>", unsafe_allow_html=True)
     st.write("<p style='text-align: center; font-size: 14px;'>Extract text from a website, PDF; or paste text directly</p>", unsafe_allow_html=True)
     st.write('---')
 
@@ -510,7 +510,7 @@ def main():
                 st.toast('Ready to generate summary')
 
     # --- Summarization Logic (MODIFIED for lazy tokenizer loading) ---
-    if st.button("⚙️ Generate Your Summary", key="generate_summary_button", width= "stretch"):
+    if st.button("📋 Generate Your Summary", key="generate_summary_button", width= "stretch"):
         if st.session_state['extracted_text'] and st.session_state['extracted_text'].strip():
             length = len(st.session_state['extracted_text'].split())
             if length < 400:

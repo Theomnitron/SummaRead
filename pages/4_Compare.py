@@ -31,7 +31,7 @@ visibility: hidden;
 
 
 
-st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>⚖️Comparison</h3>", unsafe_allow_html=True)
+st.write("<h3 style='text-align:center; font-size: 32px; font-weight: bold;'>⚖️ Comparison</h3>", unsafe_allow_html=True)
 
 st.write('---')
 
