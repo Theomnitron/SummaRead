@@ -181,85 +181,16 @@
 
 import streamlit as st
 
+head = st.markdown('<h2>Heading</h2>', unsafe_allow_html= True)
 message = st.text_area("Message", value="Lorem ipsum.\nStreamlit is cool.")
+combo = head + message
 
 if st.button("Prepare download"):
     st.download_button(
         label="Download text",
-        data=message,
-        file_name="message.docx",
+        data=combo,
+        file_name="combo.docx",
         on_click="ignore",
         type="primary",
         icon=":material/download:",
     )
-
-# import streamlit as st
-# from pdf2docx import Converter
-# import io
-
-# st.write("hello world")
-
-# uploaded_file = st.text_area('valuhi', value= "Hey there")
-# if uploaded_file is not None:
-#     # To read file as bytes:
-#     bytes_data = uploaded_file.getvalue()
-#     cv = Converter(stream=bytes_data)
-#     out_stream = io.BytesIO()
-#     cv.convert(out_stream)
-#     cv.close()
-#     # Download the file
-#     btn = st.download_button(
-#         label="Download image",
-#         data=out_stream.getvalue(),
-#         file_name="sample.docx",
-#         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-#     )
-
-
-# import streamlit as st
-# import streamlit.components.v1 as components
-
-# # Streamlit output goes here
-# st.title("Sales report")
-# st.write('---')
-# st.subheader("Sales report")
-# st.write('---')
-# st.write("srggwvw wvbwev weviw eviwe vweivwe vweivw evwevwviwev vwv")
-# # st.bar_chart(data)
-
-# show_print_button ="""
-#     <script>
-#         function print_page(obj) {
-#             obj.style.display = "none";
-#             parent.window.print();
-#         }
-#     </script>
-#     <button onclick="print_page(this)">
-#         Print page (choose 'Save as PDF' in print dialogue)
-#     </button>
-#     """
-# components.html(show_print_button)
-
-
-# import streamlit as st
-# from fpdf import FPDF
-# import base64
-
-# report_text = st.text_input("Report Text")
-
-
-# export_as_pdf = st.button("Export Report")
-
-# def create_download_link(val, filename):
-#     b64 = base64.b64encode(val)  # val looks like b'...'
-#     return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
-
-# if export_as_pdf:
-#     pdf = FPDF()
-#     pdf.add_page()
-#     pdf.set_font('Arial', 'B', 16)
-#     pdf.cell(40, 10, report_text)
-    
-#     html = create_download_link(pdf.output(dest="S").encode("latin-1"), "test")
-
-#     st.markdown(html, unsafe_allow_html=True)
