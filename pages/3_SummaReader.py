@@ -9,8 +9,7 @@ from fpdf import FPDF # Import for PDF generation
 from auth_utils.firebase_manager import render_sidebar_profile
 
 st.set_page_config(layout="centered",
-                page_icon="🗣️",
-                page_title="Text to Speech")
+                page_title="SummaReader")
 
 # Call the common sidebar profile renderer at the very beginning of the script
 render_sidebar_profile()
@@ -179,8 +178,6 @@ if st.session_state.get('logged_in', False):
                 "English (United States)": "us",
                 "English (Nigeria)": "com.ng",
                 "English (India)": "co.in",
-                "English (Australia)": "com.au",
-                "English (United Kingdom)": "co.uk"
             }
             accent = st.selectbox(
                 "Select an accent:",
@@ -219,9 +216,9 @@ if st.session_state.get('logged_in', False):
 
         else:
             # If no summary exists, tell the user to generate one
-            st.write("<h3 style='text-align:center'>🗣️ Summary Reader</h3>", unsafe_allow_html=True)
+            st.write("<h3 style='text-align:center'>🗣️ SummaryRead</h3>", unsafe_allow_html=True)
             st.info("Please go to the 'Text Extraction' page to generate a summary first.")
-            st.page_link("pages/2_source.py", label="Go to Text Extraction", icon="📝")
+            st.page_link("pages/2_Extract.py", label="Go to Text Extraction", icon="📝")
 
     # Fixed footer in the second container (for audio player)
     with footer_container:
@@ -250,4 +247,4 @@ else:
     # Content to show if the user is NOT logged in
     st.write("<h3 style='text-align:center'>🗣️ Summary Reader</h3>", unsafe_allow_html=True)
     st.info("Please log in to use the summary reader features.")
-    st.page_link("0_profile.py", label="Go to Login/Register", icon="🔑", use_container_width=True)
+    st.page_link("pages/1_Profile.py", label="Go to Login/Register", icon="🔑", use_container_width=True)
