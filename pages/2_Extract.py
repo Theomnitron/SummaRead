@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfReader
-import cv2
 import numpy as np
 import fitz
 from PIL import Image
