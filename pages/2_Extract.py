@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfReader
-import easyocr
 import cv2
 import numpy as np
 import fitz
@@ -79,13 +78,6 @@ def load_bart_tokenizer_cached(): # Renamed for clarity in lazy loading
 # The tokenizer is NOT loaded here anymore. It will be loaded when needed.
 # bart_tokenizer = load_bart_tokenizer() # REMOVED
 
-# --- OCR Model Loader (Cached - MODIFIED FOR LAZY LOADING) ---
-@st.cache_resource
-def load_ocr_model_cached(): # Renamed for clarity in lazy loading
-    return easyocr.Reader(['en'])
-
-# The OCR model is NOT loaded here anymore. It will be loaded when needed.
-# reader = load_ocr_model() # REMOVED
 
 # --- Text Cleaning and Preparation Function (PRESERVED - NO CHANGES) ---
 def clean_and_prepare_text(raw_text: str) -> tuple[str, list[str]]:
@@ -391,7 +383,7 @@ def summarize_document(raw_text: str):
     return full_summary
 
 
-# --- Core Functions (for text extraction - MODIFIED FOR LAZY OCR) ---
+# --- Core Functions (for text extraction) ---
 def fetch_url_content(url):
     """Extract main text content from a URL"""
     try:
@@ -428,24 +420,7 @@ def extract_pdf_text(pdf_file):
     except Exception as e:
         return f"Error reading PDF: {str(e)}"
 
-# OCR for images and image-based PDFs (MODIFIED for lazy OCR loading)
-def perform_ocr(image_data):
-    """Performs OCR on an image or image-based PDF page."""
-    # MODIFIED: Get OCR reader from the cached function here
-    ocr_reader_instance = load_ocr_model_cached()
-    result = ocr_reader_instance.readtext(np.array(image_data))
-    return ' '.join([text for (bbox, text, prob) in result])
 
-def extract_image_pdf_text(pdf_file):
-    """Extracts text from an image-based PDF using OCR."""
-    full_text = ""
-    doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
-    for page_num in range(len(doc)):
-        page = doc.load_page(page_num)
-        pix = page.get_pixmap()
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-        full_text += perform_ocr(img)
-    return full_text
 
 # --- Main Page UI and Logic ---
 def main():
@@ -497,9 +472,6 @@ def main():
             # if st.button("Extract from PDF"): # Removed the button for PDF as it triggers automatically on upload now
             with st.spinner("Extracting text from PDF..."):
                 pdf_content = extract_pdf_text(pdf_file)
-                if not pdf_content.strip():
-                    st.info("No searchable text found, attempting OCR...")
-                    pdf_content = extract_image_pdf_text(pdf_file)
             if not pdf_content.strip():
                 st.error("Failed to extract any text from the PDF.")
                 st.session_state['extracted_text'] = ""
