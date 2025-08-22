@@ -22,7 +22,7 @@ render_sidebar_profile()
 # This content will only be shown if the user is logged in
 # if st.session_state.get('logged_in', False):
 
-st.markdown('<h6 style = "text-align: center; padding: 50% 0 0; font-family: Inter; font-size: 13px;">Welcome to</h6>', unsafe_allow_html= True)
+st.markdown('<h6 style = "text-align: center; padding: 120px 0 0; font-family: Inter; font-size: 13px;">Welcome to</h6>', unsafe_allow_html= True)
 st.markdown('<h2 style = "text-align: center; padding: 0; margin-top: -5px; font-weight: bold; font-size: 50px;">SummaRead!</h2>', unsafe_allow_html= True)
 
 
